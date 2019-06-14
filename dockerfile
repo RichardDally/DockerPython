@@ -8,4 +8,8 @@ ADD requirements.txt /app/
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-CMD ["python", "/app/helloworld.py"]
+# Run every unit tests
+CMD ["python", "-m", "unittest", "discover", "-p", "*_test.py"]
+
+# Run Hello World program
+# CMD ["python", "/app/helloworld.py"]
