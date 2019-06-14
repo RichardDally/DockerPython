@@ -1,4 +1,4 @@
-# Build image tagged as dockerflask
+# Build image
 docker build --tag=py_helloworld_3.7.3 .
 
 # List Docker images
