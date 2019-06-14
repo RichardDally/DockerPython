@@ -1,10 +1,8 @@
 # Build image tagged as dockerflask
-docker build --tag=dockerflask .
+docker build --tag=py_helloworld_3.7.3 .
 
 # List Docker images
 docker image ls
 
-# Run it and forward port 5000 (container) to 80 (host)
-docker run -p 80:5000 dockerflask
-
-# Open 127.0.0.1 in any web browser and enjoy.
+# Python 3.7.3 hello world using Loguru
+docker run py_helloworld_3.7.3

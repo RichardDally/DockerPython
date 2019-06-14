@@ -1,9 +1,11 @@
-FROM ubuntu:latest
+FROM python:3.7.3-alpine3.9
+
 MAINTAINER Richard Dally "r.dally@protonmail.com"
-RUN apt-get update -y
-RUN apt-get install -y python3 python3-pip
-COPY . /app
+
+ADD ./*.py /app/
+ADD requirements.txt /app/
+
 WORKDIR /app
-RUN python3 -m pip install -r requirements.txt
-ENTRYPOINT ["python3"]
-CMD ["app.py"]
+RUN pip install -r requirements.txt
+
+CMD ["python", "/app/helloworld.py"]
